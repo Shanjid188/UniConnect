@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: #fff;
+  }
+  .profile-header {
+    text-align: center;
+    padding: 20px;
+  }
+  .profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  .cover-pic {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .user-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .follow-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .view-templates-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .project-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .project-description {
+    margin-bottom: 10px;
+  }
+  .demo-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="profile-header">
+  <img class="cover-pic" src="cover_pic.jpg" alt="Cover Picture">
+  <img class="profile-pic" src="profile_pic.jpg" alt="Profile Picture">
+  <div class="user-info">
+    <h1>Name</h1>
+    <p>Designation</p>
+    <p>Bio goes here. .</p>
+    <button class="follow-button">Follow</button>
+    <button class="view-templates-button">View Templates</button>
+  </div>
+</div>
+
+<div class="project-listings">
+  <div class="project-box">
+    <img class="demo-pic" src="demo_pic_1.jpg" alt="Demo Pic">
+    <div class="project-title">Project Title 1</div>
+    <div class="project-description">Description of Project 1 goes here..</div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="demo_pic_2.jpg" alt="Demo Pic">
+    <div class="project-title">Project Title 2</div>
+    <div class="project-description">Description of Project 2 goes here. .</div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="demo_pic_3.jpg" alt="Demo Pic">
+    <div class="project-title">Project Title 3</div>
+    <div class="project-description">Description of Project 3 goes here. .</div>
+  </div>
+</div>
+
+</body>
+</html>
