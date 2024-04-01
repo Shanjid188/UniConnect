@@ -8,6 +8,7 @@ class User(models.Model):
     user_name = models.CharField(max_length=200)
     user_email = models.EmailField(max_length=200)
     user_password = models.CharField(max_length=50)
+    user_mobile = models.CharField(max_length=11)
     designation = models.CharField(max_length=100, blank=True, null=True)
     user_university = models.CharField(max_length=100, blank=True, null=True)
     user_description = models.TextField(blank=True, null=True)
