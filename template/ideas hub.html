@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideas Hub</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #333333, #666666, #000000);
+  }
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .idea-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto 20px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row; /* Changed to row */
+  }
+  .idea-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .idea-description {
+    color: #666;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 0, 0.5); /* Transparent yellow container */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .action-buttons {
+    text-align: center;
+  }
+  .action-buttons button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px; /* Added margin */
+  }
+  .user-name {
+    font-weight: bold;
+    font-size: 18px; /* Adjusted font size */
+  }
+  .idea-image {
+    width: 150px; /* Adjusted width */
+    height: auto;
+  }
+</style>
+</head>
+<body>
+<div class="title">Ideas Hub</div>
+
+<div class="idea-box">
+  <div class="card p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" style="width: 18rem;">
+    <div class="card-body">
+      <div class="user-info">
+        <img src="user1.jpg" alt="User1">
+        <div class="user-name">User1</div>
+      </div>
+      <h5 class="card-title idea-title">Idea Title 1</h5>
+      <p class="card-text idea-description">Description of Idea 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="card-body action-buttons">
+      <a href="#" class="card-link">Open</a>
+      <a href="#" class="card-link">Like</a>
+    </div>
+  </div>
+  <img src="idea1.jpg" class="idea-image card-img-top" alt="Idea 1">
+</div>
+
+<div class="idea-box">
+  <div class="card p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" style="width: 18rem;">
+    <div class="card-body">
+      <div class="user-info">
+        <img src="user2.jpg" alt="User2">
+        <div class="user-name">User2</div>
+      </div>
+      <h5 class="card-title idea-title">Idea Title 2</h5>
+      <p class="card-text idea-description">Description of Idea 2 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="card-body action-buttons">
+      <a href="#" class="card-link">Open</a>
+      <a href="#" class="card-link">Like</a>
+    </div>
+  </div>
+  <img src="idea2.jpg" class="idea-image card-img-top" alt="Idea 2">
+</div>
+
+<div class="idea-box">
+  <div class="card p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" style="width: 18rem;">
+    <div class="card-body">
+      <div class="user-info">
+        <img src="user3.jpg" alt="User3">
+        <div class="user-name">User3</div>
+      </div>
+      <h5 class="card-title idea-title">Idea Title 3</h5>
+      <p class="card-text idea-description">Description of Idea 3 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="card-body action-buttons">
+      <a href="#" class="card-link">Open</a>
+      <a href="#" class="card-link">Like</a>
+    </div>
+  </div>
+  <img src="idea3.jpg" class="idea-image card-img
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

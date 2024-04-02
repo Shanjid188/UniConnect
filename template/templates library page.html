@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Templates Library</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #333333, #666666, #000000); /* Grey, Dark Grey, Black gradient */
+    color: white; /* Text color */
+  }
+  .header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, red, yellow, green, indigo); /* Yellow, Green, Blue, Indigo gradient for title */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .templates-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .template-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%; /* Adjusted width */
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .template-details {
+    margin-left: 20px;
+  }
+  .template-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .template-description {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .action-buttons {
+    text-align: center;
+  }
+  .action-buttons button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .vector-design img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="header">Templates Library</div>
+
+<div class="templates-container" id="templates-container">
+  <!-- Templates will be dynamically added here -->
+</div>
+
+<script>
+  // Function to add a new template
+  function addTemplate(title, description, imageUrl) {
+    var templatesContainer = document.getElementById("templates-container");
+
+    // Create template box
+    var templateBox = document.createElement("div");
+    templateBox.classList.add("template-box");
+
+    // Create vector design
+    var vectorDesign = document.createElement("div");
+    vectorDesign.classList.add("vector-design");
+    var image = document.createElement("img");
+    image.src = imageUrl;
+    image.alt = "Demo Pic";
+    vectorDesign.appendChild(image);
+
+    // Create template details
+    var templateDetails = document.createElement("div");
+    templateDetails.classList.add("template-details");
+
+    // Create template title
+    var templateTitle = document.createElement("div");
+    templateTitle.classList.add("template-title");
+    templateTitle.textContent = title;
+
+    // Create template description
+    var templateDescription = document.createElement("div");
+    templateDescription.classList.add("template-description");
+    templateDescription.textContent = description;
+
+    // Create action buttons
+    var actionButtons = document.createElement("div");
+    actionButtons.classList.add("action-buttons");
+    var viewButton = document.createElement("button");
+    viewButton.textContent = "View";
+    var getButton = document.createElement("button");
+    getButton.textContent = "Get";
+    actionButtons.appendChild(viewButton);
+    actionButtons.appendChild(getButton);
+
+    // Append elements to template details
+    templateDetails.appendChild(templateTitle);
+    templateDetails.appendChild(templateDescription);
+    templateDetails.appendChild(actionButtons);
+
+    // Append vector design and template details to template box
+    templateBox.appendChild(vectorDesign);
+    templateBox.appendChild(templateDetails);
+
+    // Append template box to templates container
+    templatesContainer.appendChild(templateBox);
+  }
+
+  // Add initial templates
+  addTemplate("Template 1", "Description of Template 1 goes here.", "demo_pic_1.jpg");
+  addTemplate("Template 2", "Description of Template 2 goes here.", "demo_pic_2.jpg");
+  addTemplate("Template 3", "Description of Template 3 goes here.", "demo_pic_3.jpg");
+</script>
+
+</body>
+</html>
