@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Log</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, grey, darkgrey, black);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .activity-log-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .log-entry {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .log-entry-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .log-entry-text {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="activity-log-container">
+        <h1>Activity Log</h1>
+        <div class="log-entry">
+            <span class="log-entry-icon">📅</span>
+            <span class="log-entry-text">Logged in at 10:00 AM</span>
+        </div>
+        <div class="log-entry">
+            <span class="log-entry-icon">📝</span>
+            <span class="log-entry-text">Created a new document</span>
+        </div>
+        <div class="log-entry">
+            <span class="log-entry-icon">📁</span>
+            <span class="log-entry-text">Moved file to Archive folder</span>
+        </div>
+        <div class="log-entry">
+            <span class="log-entry-icon">📤</span>
+            <span class="log-entry-text">Exported document as PDF</span>
+        </div>
+    </div>
+</body>
+</html>

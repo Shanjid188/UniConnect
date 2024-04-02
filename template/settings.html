@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, grey, darkgrey, black);
+            font-family: Arial, sans-serif;
+        }
+        .settings-container {
+            width: 80%;
+            margin: 50px auto;
+            background: rgba(0, 0, 255, 0.3); /* Transparent glossy glassy blue color */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .option {
+            width: 200px;
+            height: 200px;
+            background: #ffffff; /* White */
+            margin: 20px;
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 30px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .option:hover {
+            background: #f5f5f5; /* Light grey */
+        }
+        .option-icon {
+            font-size: 48px;
+            color: #333333; /* Dark grey */
+        }
+        .option-label {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333333; /* Dark grey */
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <div class="options-container">
+            <div class="option">
+                <span class="option-icon">ℹ️</span>
+                <div class="option-label">Update Info</div>
+            </div>
+            <div class="option">
+                <span class="option-icon">💾</span>
+                <div class="option-label">Saved Projects</div>
+            </div>
+            <div class="option">
+                <span class="option-icon">📝</span>
+                <div class="option-label">Activity Log</div>
+            </div>
+            <div class="option">
+                <span class="option-icon">💳</span>
+                <div class="option-label">Orders & Payments</div>
+            </div>
+            <div class="option">
+                <span class="option-icon">🔒</span>
+                <div class="option-label">Account Status</div>
+            </div>
+            <div class="option">
+                <span class="option-icon">🛡️</span>
+                <div class="option-label">Moderation</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

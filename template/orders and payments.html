@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders & Payments</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, grey, darkgrey, black);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .orders-payments-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .order-payment-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .order-payment-item-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .order-payment-item-text {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="orders-payments-container">
+        <h1>Orders & Payments</h1>
+        <div class="order-payment-item">
+            <span class="order-payment-item-icon">💳</span>
+            <span class="order-payment-item-text">Payment received for order #12345</span>
+        </div>
+        <div class="order-payment-item">
+            <span class="order-payment-item-icon">📦</span>
+            <span class="order-payment-item-text">Order #67890 shipped</span>
+        </div>
+        <div class="order-payment-item">
+            <span class="order-payment-item-icon">📄</span>
+            <span class="order-payment-item-text">Invoice #54321 generated</span>
+        </div>
+        <div class="order-payment-item">
+            <span class="order-payment-item-icon">💸</span>
+            <span class="order-payment-item-text">Refund issued for order #98765</span>
+        </div>
+    </div>
+</body>
+</html>
