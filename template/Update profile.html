@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Profile</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, grey, darkgrey, black);
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+    .update-profile-container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    .gender-select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    .gender-select option {
+        background-color: rgba(0, 123, 255, 0.5);
+    }
+    .btn-save-changes,
+    .btn-cancel,
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn-save-changes:hover,
+    .btn-cancel:hover,
+    .btn-back:hover {
+        background-color: #333;
+    }
+    .btn-container {
+        text-align: center;
+    }
+    .btn-back-container {
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+
+<div class="update-profile-container">
+    <h1>Update Profile</h1>
+    <form id="updateProfileForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" class="gender-select">
+                <option value="">Choose...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="btn btn-save-changes">Save Changes</button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+        <div class="btn-back-container">
+            <button type="button" class="btn btn-back" onclick="window.history.back();">Back</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
