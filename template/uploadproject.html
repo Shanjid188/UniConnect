@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Project</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, grey, darkgrey, black);
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+    .upload-project-container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    input[type="file"],
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    .btn-upload,
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn-upload:hover,
+    .btn-back:hover {
+        background-color: #333;
+    }
+    .btn-container {
+        text-align: center;
+    }
+    .btn-back-container {
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+
+<div class="upload-project-container">
+    <h1>Upload Project</h1>
+    <form id="uploadProjectForm">
+        <div class="form-group">
+            <label for="projectFiles">Add Files:</label>
+            <input type="file" id="projectFiles" name="projectFiles" multiple>
+        </div>
+        <div class="form-group">
+            <label for="projectPictures">Add Pictures:</label>
+            <input type="file" id="projectPictures" name="projectPictures" multiple accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="projectTitle">Project Title:</label>
+            <input type="text" id="projectTitle" name="projectTitle" placeholder="Enter project title">
+        </div>
+        <div class="form-group">
+            <label for="projectFileParty">Select File Party:</label>
+            <select id="projectFileParty" name="projectFileParty">
+                <option value="">Select a file party</option>
+                <option value="fileParty1">File Party 1</option>
+                <option value="fileParty2">File Party 2</option>
+                <option value="fileParty3">File Party 3</option>
+                
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="collaborators">Add Collaborators (separated by commas):</label>
+            <input type="text" id="collaborators" name="collaborators" placeholder="Enter names">
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="btn btn-upload">Upload Project</button>
+        </div>
+        <div class="btn-back-container">
+            <button type="button" class="btn btn-back" onclick="window.history.back();">Back/Cancel</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
