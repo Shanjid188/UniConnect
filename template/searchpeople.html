@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search People</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, white, skyblue);
+        font-family: Arial, sans-serif;
+        color: #333; /* Dark grey */
+    }
+    .search-people-container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+        border-radius: 10px;
+        position: relative; /* Added for positioning search icon */
+        text-align: center; /* Center-align text within container */
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative; /* Added for positioning search icon */
+    }
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        transform: translateY(-50%);
+        color: #666; /* Grey */
+    }
+    .search-bar-container {
+        text-align: center;
+    }
+    .search-bar {
+        width: calc(100% - 40px); /* Adjusted width to accommodate search icon */
+        padding: 10px 15px; /* Adjusted padding */
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(0, 123, 255, 0.1); /* Sky blue with transparency */
+        color: #333; /* Dark grey */
+        margin-bottom: 20px;
+        display: inline-block; /* Added for centering */
+    }
+    .go-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff; /* Sky blue */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .go-button:hover {
+        background-color: #0056b3; /* Darker sky blue */
+    }
+    .people-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .person {
+        text-align: center;
+    }
+    .person img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    .person-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .person-id {
+        font-size: 14px;
+        color: #666; /* Grey */
+        margin-bottom: 10px;
+    }
+    .visit-profile-btn {
+        padding: 5px 10px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: skyblue;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .visit-profile-btn:hover {
+        background-color: #007bff; /* Darker sky blue */
+    }
+    .btn-back-container {
+        text-align: right;
+        margin-top: 20px;
+    }
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: black; /* Black */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn-back:hover {
+        background-color: #333; /* Darker black */
+    }
+</style>
+</head>
+<body>
+
+<div class="search-people-container">
+    <h1>Search People<span class="search-icon">&#128269;</span></h1>
+    <div class="search-bar-container">
+        <input type="text" class="search-bar" placeholder="Enter Person ID...">
+        <button class="go-button" onclick="goToProfile()">Go</button>
+    </div>
+    <div class="people-list">
+        <div class="person">
+            <img src="person1.jpg" alt="Person 1">
+            <div class="person-name">Redwan</div>
+            <div class="person-id">ID: 21201195</div>
+            <button class="visit-profile-btn">Visit Profile</button>
+        </div>
+        <div class="person">
+            <img src="person2.jpg" alt="Person 2">
+            <div class="person-name">Shanjid</div>
+            <div class="person-id">ID: 21201188</div>
+            <button class="visit-profile-btn">Visit Profile</button>
+        </div>
+        <!-- Add more people as needed -->
+    </div>
+    <div class="btn-back-container">
+        <button class="btn-back" onclick="window.history.back();">Back</button>
+    </div>
+</div>
+
+<script>
+function goToProfile() {
+    var personId = document.querySelector('.search-bar').value;
+    // You can handle the redirection to the person's profile page here
+    alert("Going to profile with ID: " + personId);
+}
+</script>
+
+</body>
+</html>
