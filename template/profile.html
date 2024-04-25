@@ -9,8 +9,8 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #333333, #666666, #000000); /* Grey, Dark Grey, Black gradient */
-    color: #fff;
+    background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White, Sky Blue gradient */
+    color: #333;
   }
   .profile-header {
     text-align: center;
@@ -47,22 +47,20 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .follow-button {
-    background-color: #fff;
-    color: #333;
+  .follow-button, .view-templates-button, .project-button, .like-button {
+    background-color: #87ceeb;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     margin-right: 10px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
   }
-  .view-templates-button {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  .follow-button:hover, .view-templates-button:hover, .project-button:hover, .like-button:hover {
+    background-color: #4682b4;
   }
   .project-listings {
     display: flex;
@@ -70,7 +68,7 @@
     justify-content: center;
   }
   .project-box {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.8); /* Less transparent */
     border-radius: 10px;
     margin: 10px;
     padding: 20px;
@@ -78,6 +76,10 @@
     text-align: center;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     position: relative;
+    transition: transform 0.3s ease;
+  }
+  .project-box:hover {
+    transform: translateY(-5px);
   }
   .project-title {
     font-size: 20px;
@@ -96,20 +98,6 @@
   .button-container {
     margin-top: 20px;
   }
-  .project-button {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  .like-button {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-  }
 </style>
 </head>
 <body>
@@ -121,11 +109,11 @@
       <img class="profile-pic" src="profile_pic.jpg" alt="Profile Picture">
     </div>
     <div class="user-info">
-      <h1>Name</h1>
-      <p>Designation</p>
-      <p>Bio goes here. .</p>
-      <button class="follow-button">Followers</button>
-      <button class="view-templates-button">View Templates</button>
+      <h1>Tonny</h1>
+      <p>Student</p>
+      <p>Welcome to my profile</p>
+      <a href="#" class="follow-button">Followers</a>
+      <a href="#" class="view-templates-button">View Templates</a>
     </div>
   </div>
 </div>
@@ -133,32 +121,61 @@
 <div class="project-listings">
   <div class="project-box">
     <img class="demo-pic" src="demo_pic_1.jpg" alt="Demo Pic">
-    <div class="project-title">Project Title 1</div>
-    <div class="project-description">Description of Project 1 goes here..</div>
+    <div class="project-title">Eco Track</div>
+    <div class="project-description">Through features like carbon footprint calculation, waste reduction tips, and eco-friendly product suggestions, users can easily adopt more sustainable habits.</div>
     <div class="button-container">
-      <button class="project-button">Open</button>
-      <button class="project-button like-button">Like</button>
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
     </div>
   </div>
   <div class="project-box">
     <img class="demo-pic" src="demo_pic_2.jpg" alt="Demo Pic">
-    <div class="project-title">Project Title 2</div>
-    <div class="project-description">Description of Project 2 goes here. .</div>
+    <div class="project-title">MindSync</div>
+    <div class="project-description"> Mental wellness app that connects users with licensed therapists for online counseling sessions .</div>
     <div class="button-container">
-      <button class="project-button">Open</button>
-      <button class="project-button like-button">Like</button>
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
     </div>
   </div>
   <div class="project-box">
     <img class="demo-pic" src="demo_pic_3.jpg" alt="Demo Pic">
-    <div class="project-title">Project Title 3</div>
-    <div class="project-description">Description of Project 3 goes here. .</div>
+    <div class="project-title">CodeCrafters</div>
+    <div class="project-description">A coding challenge assignment where students develop small-scale software applications to solve real-world problems.</div>
     <div class="button-container">
-      <button class="project-button">Open</button>
-      <button class="project-button like-button">Like</button>
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <!-- Add three more project boxes -->
+  <div class="project-box">
+    <img class="demo-pic" src="demo_pic_4.jpg" alt="Demo Pic">
+    <div class="project-title"> Geometry in Action</div>
+    <div class="project-description">Applications of geometry in practical scenarios .</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="demo_pic_5.jpg" alt="Demo Pic">
+    <div class="project-title">Literary Analysis Lab</div>
+    <div class="project-description">In-depth analyses of literary works, exploring themes, characters, and narrative techniques .</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="demo_pic_6.jpg" alt="Demo Pic">
+    <div class="project-title">DataSphere</div>
+    <div class="project-description">Project involves designing an Entity-Relationship Diagram (ERD).</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
     </div>
   </div>
 </div>
 
 </body>
 </html>
+
