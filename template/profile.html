@@ -98,15 +98,27 @@
   .button-container {
     margin-top: 20px;
   }
+   .imagediv img {
+     display: block;
+     position: absolute;
+     top: 10vh;
+     height: 100vh;
+     width: 100%;
+     z-index: -1;
+     pointer-events: none;
+     background-color: #fff;
+   }
 </style>
 </head>
 <body>
-
+{% load static %}
 <div class="profile-header">
+
   <div class="top-section">
+
     <div class="cover-container">
-      <img class="cover-pic" src="cover_pic.jpg" alt="Cover Picture">
-      <img class="profile-pic" src="profile_pic.jpg" alt="Profile Picture">
+      <img class="cover-pic" src="{%  static 'image/tonny_cover.jpg' %}"  alt="Cover Picture">
+      <img class="profile-pic" src="{%  static 'image/tonny.jpg' %}" alt="Profile Picture">
     </div>
     <div class="user-info">
       <h1>Tonny</h1>
@@ -120,7 +132,7 @@
 
 <div class="project-listings">
   <div class="project-box">
-    <img class="demo-pic" src="demo_pic_1.jpg" alt="Demo Pic">
+    <img class="demo-pic" src="{%  static 'image/1. eco for profile html.jpeg' %}" alt="Demo Pic">
     <div class="project-title">Eco Track</div>
     <div class="project-description">Through features like carbon footprint calculation, waste reduction tips, and eco-friendly product suggestions, users can easily adopt more sustainable habits.</div>
     <div class="button-container">
@@ -129,7 +141,7 @@
     </div>
   </div>
   <div class="project-box">
-    <img class="demo-pic" src="demo_pic_2.jpg" alt="Demo Pic">
+    <img class="demo-pic" src="{%  static 'image/2. mind for profile html.jpg' %} "alt="Demo Pic">
     <div class="project-title">MindSync</div>
     <div class="project-description"> Mental wellness app that connects users with licensed therapists for online counseling sessions .</div>
     <div class="button-container">
@@ -138,7 +150,7 @@
     </div>
   </div>
   <div class="project-box">
-    <img class="demo-pic" src="demo_pic_3.jpg" alt="Demo Pic">
+    <img class="demo-pic" src="{%  static 'image/3.code for profile html.jpg' %} " alt="Demo Pic">
     <div class="project-title">CodeCrafters</div>
     <div class="project-description">A coding challenge assignment where students develop small-scale software applications to solve real-world problems.</div>
     <div class="button-container">
@@ -148,7 +160,7 @@
   </div>
   <!-- Add three more project boxes -->
   <div class="project-box">
-    <img class="demo-pic" src="demo_pic_4.jpg" alt="Demo Pic">
+    <img class="demo-pic" src="{%  static 'image/4. geo for profile html.jpg' %} " alt="Demo Pic">
     <div class="project-title"> Geometry in Action</div>
     <div class="project-description">Applications of geometry in practical scenarios .</div>
     <div class="button-container">
@@ -157,7 +169,7 @@
     </div>
   </div>
   <div class="project-box">
-    <img class="demo-pic" src="demo_pic_5.jpg" alt="Demo Pic">
+    <img class="demo-pic" src="{%  static 'image/5.literacy for profilr html.png' %} " alt="Demo Pic">
     <div class="project-title">Literary Analysis Lab</div>
     <div class="project-description">In-depth analyses of literary works, exploring themes, characters, and narrative techniques .</div>
     <div class="button-container">
@@ -166,7 +178,7 @@
     </div>
   </div>
   <div class="project-box">
-    <img class="demo-pic" src="demo_pic_6.jpg" alt="Demo Pic">
+    <img class="demo-pic" src="{%  static 'image/6. data for profile html.png' %} " alt="Demo Pic">
     <div class="project-title">DataSphere</div>
     <div class="project-description">Project involves designing an Entity-Relationship Diagram (ERD).</div>
     <div class="button-container">
@@ -175,7 +187,6 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
 
