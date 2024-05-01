@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Templates Library</title>
+<!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #333333, #666666, #000000); /* Grey, Dark Grey, Black gradient */
-    color: white; /* Text color */
+    background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White, Sky Blue gradient */
+    color: #333; /* Text color */
   }
   .header {
     text-align: center;
@@ -18,9 +20,10 @@
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 20px;
-    background: linear-gradient(to right, red, yellow, green, indigo); /* Yellow, Green, Blue, Indigo gradient for title */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: black; /* Changed title color to solid black */
+  }
+  .icon {
+    margin-left: 10px;
   }
   .templates-container {
     display: flex;
@@ -45,7 +48,7 @@
   .template-title {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: black; /* Changed title color to solid black */
     margin-bottom: 10px;
   }
   .template-description {
@@ -54,8 +57,9 @@
   }
   .action-buttons {
     text-align: center;
+    margin-top: auto;
   }
-  .action-buttons button {
+  .action-buttons a {
     background-color: #333;
     color: #fff;
     border: none;
@@ -63,6 +67,8 @@
     border-radius: 5px;
     margin: 0 5px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
   }
   .vector-design img {
     width: 100px;
@@ -72,7 +78,7 @@
 </style>
 </head>
 <body>
-<div class="header">Templates Library</div>
+<div class="header">Templates Library <i class="fas fa-file icon"></i></div>
 
 <div class="templates-container" id="templates-container">
   <!-- Templates will be dynamically added here -->
@@ -112,10 +118,12 @@
     // Create action buttons
     var actionButtons = document.createElement("div");
     actionButtons.classList.add("action-buttons");
-    var viewButton = document.createElement("button");
+    var viewButton = document.createElement("a");
     viewButton.textContent = "View";
-    var getButton = document.createElement("button");
+    viewButton.href = "#";
+    var getButton = document.createElement("a");
     getButton.textContent = "Get";
+    getButton.href = "#";
     actionButtons.appendChild(viewButton);
     actionButtons.appendChild(getButton);
 
@@ -133,9 +141,9 @@
   }
 
   // Add initial templates
-  addTemplate("Template 1", "Description of Template 1 goes here.", "demo_pic_1.jpg");
-  addTemplate("Template 2", "Description of Template 2 goes here.", "demo_pic_2.jpg");
-  addTemplate("Template 3", "Description of Template 3 goes here.", "demo_pic_3.jpg");
+  addTemplate("Complaint Letter", "A template for writing a formal complaint letter.", "demo_pic_1.jpg");
+  addTemplate("ERD for Shopping System", "An Entity-Relationship Diagram for designing a shopping system database.", "demo_pic_2.jpg");
+  addTemplate("Theory of Computation Project", "A project exploring various concepts in the theory of computation.", "demo_pic_3.jpg");
 </script>
 
 </body>
