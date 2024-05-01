@@ -10,7 +10,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #333333, #666666, #000000);
+    background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White-Blue gradient */
   }
   .title {
     font-size: 36px;
@@ -18,9 +18,7 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: black; /* Solid black color */
   }
   .idea-box {
     background-color: #fff;
@@ -50,14 +48,16 @@
   .action-buttons {
     text-align: center;
   }
-  .action-buttons button {
-    background-color: #333;
+  .action-buttons a {
+    background-color: black; /* Black color for buttons */
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     margin: 0 5px;
     cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    display: inline-block;
   }
   .user-info {
     display: flex;
@@ -143,3 +143,4 @@
 
 </body>
 </html>
+
