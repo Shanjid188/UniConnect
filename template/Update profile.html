@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +8,9 @@
     body {
         margin: 0;
         padding: 0;
-        background: linear-gradient(to bottom right, grey, darkgrey, black);
+        background: linear-gradient(to bottom right, #ffffff, #87ceeb, #000000); /* White-blue-black gradient */
         font-family: Arial, sans-serif;
-        color: white;
+        color: black;
     }
     .update-profile-container {
         width: 80%;
@@ -90,6 +89,10 @@
 <div class="update-profile-container">
     <h1>Update Profile</h1>
     <form id="updateProfileForm">
+        <div class="form-group">
+            <label for="profilePic">Profile Picture:</label>
+            <input type="file" id="profilePic" name="profilePic">
+        </div>
         <div class="form-group">
             <label for="coverPic">Cover Picture:</label>
             <input type="file" id="coverPic" name="coverPic">
