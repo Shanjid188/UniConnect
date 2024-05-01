@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messaging App</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .message-container {
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .message {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .message.sent {
+    background-color: #4caf50;
+    color: white;
+    text-align: right;
+  }
+  .message.received {
+    background-color: #2196f3;
+    color: white;
+    text-align: left;
+  }
+  .message.sent .time,
+  .message.received .time {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+  }
+  .input-container {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .send-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .send-button:hover {
+    background-color: #45a049;
+  }
+  .file-input {
+    display: none;
+  }
+  .upload-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2196f3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .upload-button:hover {
+    background-color: #1e87db;
+  }
+  .image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="message-container" id="messageContainer">
+    <!-- Messages will be displayed here -->
+    <div class="message sent">
+      Hey there!
+      <span class="time">10:00 AM</span>
+    </div>
+    <div class="message received">
+      Hi! How can I help you?
+      <span class="time">10:01 AM</span>
+    </div>
+  </div>
+  <div class="input-container">
+    <input type="text" class="input-field" id="messageInput" placeholder="Type your message...">
+    <input type="file" class="file-input" id="imageInput" accept="image/*" onchange="previewImage()">
+    <img src="#" alt="Image Preview" id="imagePreview" class="image-preview">
+    <button class="upload-button" onclick="document.getElementById('imageInput').click()">Upload Picture</button>
+    <button class="send-button" onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+function sendMessage() {
+  var messageInput = document.getElementById("messageInput");
+  var message = messageInput.value.trim();
+  var fileInput = document.getElementById("imageInput").files[0];
+  
+  if (message !== "" || fileInput) {
+    var messageContainer = document.getElementById("messageContainer");
+    
+    if (message !== "") {
+      var newMessage = document.createElement("div");
+      newMessage.className = "message sent";
+      newMessage.textContent = message;
+      
+      var timeSpan = document.createElement("span");
+      timeSpan.className = "time";
+      var now = new Date();
+      var hours = now.getHours().toString().padStart(2, "0");
+      var minutes = now.getMinutes().toString().padStart(2, "0");
+      timeSpan.textContent = hours + ":" + minutes;
+      
+      newMessage.appendChild(timeSpan);
+      messageContainer.appendChild(newMessage);
+      
+      messageInput.value = "";
+    }
+    
+    if (fileInput) {
+      var reader = new FileReader();
+      reader.onloadend = function () {
+        var newMessage = document.createElement("div");
+        newMessage.className = "message sent";
+        
+        var image = document.createElement("img");
+        image.src = reader.result;
+        image.className = "image-preview";
+        
+        var timeSpan = document.createElement("span");
+        timeSpan.className = "time";
+        var now = new Date();
+        var hours = now.getHours().toString().padStart(2, "0");
+        var minutes = now.getMinutes().toString().padStart(2, "0");
+        timeSpan.textContent = hours + ":" + minutes;
+        
+        newMessage.appendChild(image);
+        newMessage.appendChild(timeSpan);
+        messageContainer.appendChild(newMessage);
+        
+        // Scroll to bottom of message container
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+      };
+      reader.readAsDataURL(fileInput);
+    }
+    
+    // Scroll to bottom of message container
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+    
+    // Simulate received message (for demonstration)
+    setTimeout(receiveMessage, 1000);
+  }
+}
+
+function receiveMessage() {
+  var messageContainer = document.getElementById("messageContainer");
+  
+  var newMessage = document.createElement("div");
+  newMessage.className = "message received";
+  newMessage.textContent = "This is a received message.";
+  
+  var timeSpan = document.createElement("span");
+  timeSpan.className = "time";
+  var now = new Date();
+  var hours = now.getHours().toString().padStart(2, "0");
+  var minutes = now.getMinutes().toString().padStart(2, "0");
+  timeSpan.textContent = hours + ":" + minutes;
+  
+  newMessage.appendChild(timeSpan);
+  messageContainer.appendChild(newMessage);
+  
+  // Scroll to bottom of message container
+  messageContainer.scrollTop = messageContainer.scrollHeight;
+}
+
+function previewImage() {
+  var preview = document.getElementById("imagePreview");
+  var fileInput = document.getElementById("imageInput").files[0];
+  var reader = new FileReader();
+  
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  };
+  
+  if (fileInput) {
+    reader.readAsDataURL(fileInput);
+  } else {
+    preview.src = "";
+  }
+}
+</script>
+
+</body>
+</html>
