@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile - Shanjid</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White, Sky Blue gradient */
+    color: #333;
+  }
+  .profile-header {
+    text-align: center;
+    padding: 20px;
+  }
+  .top-section {
+    margin-bottom: 20px;
+  }
+  .cover-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .cover-pic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .profile-pic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  .user-info {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .message-button, .view-templates-button, .project-button, .like-button {
+    background-color: #87ceeb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  .message-button:hover, .view-templates-button:hover, .project-button:hover, .like-button:hover {
+    background-color: #4682b4;
+  }
+  .project-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Less transparent */
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .project-box:hover {
+    transform: translateY(-5px);
+  }
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .project-description {
+    margin-bottom: 10px;
+  }
+  .demo-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+   .imagediv img {
+     display: block;
+     position: absolute;
+     top: 10vh;
+     height: 100vh;
+     width: 100%;
+     z-index: -1;
+     pointer-events: none;
+     background-color: #fff;
+   }
+</style>
+</head>
+<body>
+{% load static %}
+<div class="profile-header">
+
+  <div class="top-section">
+
+    <div class="cover-container">
+      <img class="cover-pic" src="{%  static 'image/shanjid_cover.jpg' %}"  alt="Cover Picture">
+      <img class="profile-pic" src="{%  static 'image/shanjid.jpg' %}" alt="Profile Picture">
+    </div>
+    <div class="user-info">
+      <h1>Shanjid</h1>
+      <p>ID: 21201188</p>
+      <p>Welcome to my profile</p>
+      <a href="#" class="message-button">Message</a>
+      <a href="#" class="view-templates-button">View Templates</a>
+    </div>
+  </div>
+</div>
+
+<div class="project-listings">
+  <div class="project-box">
+    <img class="demo-pic" src="{%  static 'image/1_project_shanjid.jpg' %}" alt="Demo Pic">
+    <div class="project-title">Business Planner</div>
+    <div class="project-description">A comprehensive business planning tool for entrepreneurs to map out their business strategies and financial projections.</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="{%  static 'image/2_project_shanjid.jpg' %} "alt="Demo Pic">
+    <div class="project-title">Health Tracker</div>
+    <div class="project-description">Track your daily activities, workouts, and monitor your health metrics with this intuitive health tracking app.</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="{%  static 'image/3_project_shanjid.jpg' %} " alt="Demo Pic">
+    <div class="project-title">Recipe Book</div>
+    <div class="project-description">Keep your favorite recipes organized and easily accessible with this digital recipe book.</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <!-- Add three more project boxes -->
+  <div class="project-box">
+    <img class="demo-pic" src="{%  static 'image/4_project_shanjid.jpg' %} " alt="Demo Pic">
+    <div class="project-title">Travel Diary</div>
+    <div class="project-description">Capture your travel experiences and memories with photos, notes, and maps in this digital travel diary.</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+  <div class="project-box">
+    <img class="demo-pic" src="{%  static 'image/5_project_shanjid.jpg' %} " alt="Demo Pic">
+    <div class="project-title">Finance Manager</div>
+    <div class="project-description">Track your expenses, manage budgets, and analyze your financial health with this comprehensive finance manager app.</div>
+    <div class="button-container">
+      <a href="#" class="project-button">Open</a>
+      <a href="#" class="project-button like-button">Like</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
