@@ -4,4 +4,4 @@ from .models import *
 class UserFrom(ModelForm):
     class Meta:
         models = User
-        fields = 'all'
+        fields = '__all__'

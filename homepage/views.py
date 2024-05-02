@@ -53,3 +53,28 @@ def settings(request):
 
 def updateProfile(request):
     return render(request, template_name='Update profile.html')
+
+
+def uploadProject(request):
+    return render(request, template_name='uploadproject.html')
+
+
+def cartTemp(request):
+    return render(request, template_name='cartfortemplates.html')
+
+
+def likedProject(request):
+    return render(request, template_name='liked project.html')
+
+
+def messenger(request):
+    return render(request, template_name='messenger.html')
+
+
+def searchPeople(request):
+    return render(request, template_name='searchpeople.html')
+
+
+def someonesProfile(request):
+    return render(request, template_name='someones profile.html')
+
