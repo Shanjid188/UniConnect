@@ -1,5 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import Profile
+from django.contrib.auth.models import User, auth
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -8,8 +15,45 @@ def home(request):
 
 
 def signUp(request):
-    return render(request, template_name='sign up.html')
+    if request.method =='POST':
 
+        username = request.POST.get('username')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        uniname = request.POST.get('uniname')
+        designation = request.POST.get('designation')
+        description = request.POST.get('description')
+        
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+        profile = Profile.objects.create(user = user,user_mobile=phone,user_university =uniname,designation=designation,user_description = description)
+        profile.save() 
+        return redirect('/')
+             
+    
+    return render(request, template_name='signup.html')
+
+def loginUser(request):
+    if request.user.is_authenticated:
+        return redirect('profile')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('profile')
+            else:
+                return redirect('/')  
+        return render(request,'login.html')
+    
+def logOutUser(request):
+    auth.logout(request)
+    return redirect('/')
+    
 # feed removed
 # def feed(request):
     # return render(request, template_name='feed.html')
@@ -33,10 +77,6 @@ def AccStatus(request):
 
 def activityLog(request):
     return render(request, template_name='activity log.html')
-
-
-def logIn(request):
-    return render(request, template_name='log in.html')
 
 
 def moderation(request):
@@ -79,21 +119,4 @@ def someonesProfile(request):
     return render(request, template_name='someones profile.html')
 
 
-def createUser(request):
-    form = UserCForm()
-    # formP = UserProfileForm()
 
-    if request.method == 'POST':
-        form = UserCForm(request.POST, request.FILES)
-        # formP = UserProfileForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            # formP.save()
-            form.save()
-            return redirect('/')
-
-    context = {
-        'form': form,
-        # 'formU': formU,
-    }
-    return render(request, 'CreateUser.html', context)

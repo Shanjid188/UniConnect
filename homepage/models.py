@@ -3,13 +3,17 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
-# Create your models here.
-class UserProfile(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+
+# Create your models here.
+class Profile(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     # user_name = models.CharField(max_length=200)
     # user_email = models.EmailField(max_length=200)
     # user_password = models.CharField(max_length=50)
+
     user_mobile = models.CharField(max_length=11, null=True, blank=True)
     designation = models.CharField(max_length=100, blank=True, null=True)
     user_university = models.CharField(max_length=100, blank=True, null=True)

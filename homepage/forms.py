@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-
+from django import forms
 from .models import *
 
 
@@ -11,5 +11,5 @@ class UserCForm(ModelForm):
 
 class UserProfileForm(ModelForm):
     class Meta:
-        models = UserProfile
+        models = Profile
         fields = ['user_mobile', 'designation', 'user_university', 'user_description', 'user_profile_pic', 'user_profile_cover']

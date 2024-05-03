@@ -16,11 +16,20 @@
       <img class="profile-pic" src="{%  static 'image/tonny.jpg' %}" alt="Profile Picture">
     </div>
     <div class="user-info">
+    {% if user.is_authenticated %} 
+      <h1>{{request.user.username}}</h1>
+      <p>{{request.user.profile.designation}}</p>
+      <p>{{request.user.profile.user_description}}</p>
+    {% else %}
       <h1>Tonny</h1>
       <p>Student</p>
       <p>Welcome to my profile</p>
+    {% endif %}
       <a href="../uploadProject/" class="follow-button">Upload</a>
       <a href="#" class="view-templates-button">View Templates</a>
+    {% if user.is_authenticated %} 
+      <a href="{% url 'logout' %}" class="view-templates-button">Logout</a>
+    {% endif %}
     </div>
   </div>
 </div>
