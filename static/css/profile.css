@@ -1,0 +1,103 @@
+.profile-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White, Sky Blue gradient */
+    color: #333;
+  }
+  .profile-header {
+    text-align: center;
+    padding: 20px;
+  }
+  .top-section {
+    margin-bottom: 20px;
+  }
+  .cover-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .cover-pic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .profile-pic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  .user-info {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .follow-button, .view-templates-button, .project-button, .like-button {
+    background-color: #87ceeb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  .follow-button:hover, .view-templates-button:hover, .project-button:hover, .like-button:hover {
+    background-color: #4682b4;
+  }
+  .project-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Less transparent */
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .project-box:hover {
+    transform: translateY(-5px);
+  }
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .project-description {
+    margin-bottom: 10px;
+  }
+  .demo-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+   .imagediv img {
+     display: block;
+     position: absolute;
+     top: 10vh;
+     height: 100vh;
+     width: 100%;
+     z-index: -1;
+     pointer-events: none;
+     background-color: #fff;
+   }

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from .forms import *
 
 # Create your views here.
 
@@ -78,3 +78,22 @@ def searchPeople(request):
 def someonesProfile(request):
     return render(request, template_name='someones profile.html')
 
+
+def createUser(request):
+    form = UserCForm()
+    # formP = UserProfileForm()
+
+    if request.method == 'POST':
+        form = UserCForm(request.POST, request.FILES)
+        # formP = UserProfileForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            # formP.save()
+            form.save()
+            return redirect('/')
+
+    context = {
+        'form': form,
+        # 'formU': formU,
+    }
+    return render(request, 'CreateUser.html', context)

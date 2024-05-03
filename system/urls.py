@@ -40,4 +40,6 @@ urlpatterns = [
     path('messenger/', a_views.messenger, name='messenger'),
     path('searchPeople/', a_views.searchPeople, name='searchPeople'),
     path('someonesProfile/', a_views.someonesProfile, name='someonesProfile'),
+
+    path('createUser/', a_views.createUser, name='createUser'),
 ]

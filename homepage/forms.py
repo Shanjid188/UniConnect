@@ -1,7 +1,15 @@
 from django.forms import ModelForm
 
 from .models import *
-class UserFrom(ModelForm):
+
+
+class UserCForm(ModelForm):
     class Meta:
         models = User
-        fields = '__all__'
+        fields = ['username', 'password', 'email']
+
+
+class UserProfileForm(ModelForm):
+    class Meta:
+        models = UserProfile
+        fields = ['user_mobile', 'designation', 'user_university', 'user_description', 'user_profile_pic', 'user_profile_cover']
