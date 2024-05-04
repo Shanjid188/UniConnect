@@ -37,7 +37,7 @@ urlpatterns = [
     path('moderation/', a_views.moderation, name='moderation'),
     path('orderAndPayments/', a_views.orderAndPayments, name='orderAndPayments'),
     path('settings/', a_views.settings, name='settings'),
-    path('updateProfile/', a_views.updateProfile, name='updateProfile'),
+    path('updateProfile/', a_views.profileUpdate, name='updateProfile'),
 
     path('uploadProject/', a_views.uploadProject, name='uploadProject'),
     path('cartTemp/', a_views.cartTemp, name='cartTemp'),

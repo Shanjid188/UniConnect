@@ -89,8 +89,11 @@
 
 <div class="update-profile-container">
     <h1>Update Profile</h1>
-    <form id="updateProfileForm">
-        <div class="form-group">
+    <form id="updateProfileForm" method='POST' enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{formU.as_p}}
+        {{formP.as_p}}
+        {% comment %} <div class="form-group">
             <label for="profilePic">Profile Picture:</label>
             <input type="file" id="profilePic" name="profilePic">
         </div>
@@ -147,7 +150,8 @@
         </div>
         <div class="btn-back-container">
             <button type="button" class="btn btn-back" onclick="window.history.back();">Back</button>
-        </div>
+        </div> {% endcomment %}
+        <input type="submit" name="submit" value="Update">
     </form>
 </div>
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import *
+
 from .models import Profile, Templates
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import get_user_model
@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .updateForm import UserUpdateForm , UserProfileForm
 
 # Create your views here.
 
@@ -61,15 +62,16 @@ def updateProfile(request):
     return render(request, template_name='Update profile.html')
 
 
+
 def profileUpdate(request):
-    formU = UserCForm()
-    formP = UserProfileForm()
+    # formU = UserCForm()
+    # formP = UserProfileForm()
     user = User.objects.get(username = request.user.username)
     print(user)
 
     pro = Profile.objects.get( user = user)
     print(pro)
-    formU = UserCForm(instance = user)
+    formU = UserUpdateForm(instance = user)
     formP = UserProfileForm(instance = pro)
     if request.method == 'POST':
 
@@ -84,7 +86,7 @@ def profileUpdate(request):
         # cover = request.POST.get('coverPic')
 
 
-        formU = UserCForm(request.POST, request.FILES, instance=user)
+        formU = UserUpdateForm(request.POST, request.FILES, instance=user)
         formP = UserProfileForm(request.POST, request.FILES, instance=pro)
 
         # user.update(username=username, email=email, password=password)
@@ -104,14 +106,14 @@ def profileUpdate(request):
         #     'm2':'your profile Update Successfull',
         #     'url':'profile',
         #     }
-        return render(request, '../profile.html') #, context)
+        return render(request, 'profile.html') #, context)
 
     context = {
         'formP':formP,
         'formU':formU
     }
 
-    return render(request, '../Update profile.html', context)
+    return render(request, 'Update profile.html', context)
 
 
 # feed removed

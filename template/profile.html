@@ -12,8 +12,16 @@
   <div class="top-section">
     {% if user.is_authenticated %}    <!-- TRIED TO MAKE DYNAMIC -->
     <div class="cover-container">
-      <img class="cover-pic" src="{{request.user.Profile.user_profile_cover}}"  alt="Cover Picture">
-      <img class="profile-pic" src="{{request.user.user_profile_pic}}" alt="Profile Picture">
+        {% if request.user.profile.user_profile_cover %}
+          <img class="cover-pic" src="{{request.user.profile.user_profile_cover.url}}"  alt="Cover Picture">
+        {% else %}
+          <img class="cover-pic" src=""  alt="Cover Picture">
+        {% endif %}
+        {% if request.user.profile.user_profile_pic %}
+          <img class="profile-pic" src="{{request.user.profile.user_profile_pic.url}}" alt="Profile Picture">
+        {% else %}
+          <img class="cover-pic" src=""  alt="Cover Picture">
+        {% endif %}
     </div>
     <div class="profile-user-info">
 
