@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeleteUser</title>
+    <style>
+        .deleteUser-container {
+            width: 50%;
+            height: 100px;
+            margin: 200px auto;
+            background: rgba(5, 0, 250, 0.3); /* Transparent glossy glassy blue color */
+            border-radius: 10px;
+            padding: 100px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .question-container{
+            color:white;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        a {
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+            background: white;
+            margin: 100px auto;
+            padding: 1px;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="deleteUser-container">
+    <form method = 'POST'>
+        {% csrf_token %}
+        <div class="question-container"><p>Are you sure?</p> </div>
+
+
+        <a href="{% url 'profile' %}" class="btn btn-warning">No</a>
+
+        <input type="submit" name="Yes" value="Yes">
+
+    </form>
+    </div>
+</body>
+</html>

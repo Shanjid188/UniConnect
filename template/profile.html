@@ -15,12 +15,12 @@
         {% if request.user.profile.user_profile_cover %}
           <img class="cover-pic" src="{{request.user.profile.user_profile_cover.url}}"  alt="Cover Picture">
         {% else %}
-          <img class="cover-pic" src=""  alt="Cover Picture">
+          <img class="cover-pic" src="{%  static 'image/upload/Default_cover.png' %}"  alt="Cover Picture">
         {% endif %}
         {% if request.user.profile.user_profile_pic %}
           <img class="profile-pic" src="{{request.user.profile.user_profile_pic.url}}" alt="Profile Picture">
         {% else %}
-          <img class="cover-pic" src=""  alt="Cover Picture">
+          <img class="profile-pic" src="{%  static 'image/upload/Default_pic.png' %}"  alt="Profile Picture">
         {% endif %}
     </div>
     <div class="profile-user-info">

@@ -46,5 +46,7 @@ urlpatterns = [
     path('searchPeople/', a_views.searchPeople, name='searchPeople'),
     path('someonesProfile/', a_views.someonesProfile, name='someonesProfile'),
 
+    path('user_Delete/', a_views.delete_User, name='user_Delete'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

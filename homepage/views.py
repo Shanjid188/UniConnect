@@ -56,11 +56,13 @@ def logOutUser(request):
     return redirect('/')
 
 
-def updateProfile(request):
+def delete_User(request):
+    delUser = User.objects.get(username = request.user.username)
 
-
-    return render(request, template_name='Update profile.html')
-
+    if request.method == 'POST':
+        delUser.delete()
+        return redirect('home')
+    return render(request, 'deleteUser.html')
 
 
 def profileUpdate(request):
@@ -143,7 +145,7 @@ def AccStatus(request):
 
 
 def activityLog(request):
-    return render(request, template_name='activity log.html')
+    return render(request, template_name='activityLog.html')
 
 
 def moderation(request):
