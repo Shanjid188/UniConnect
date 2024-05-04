@@ -18,8 +18,9 @@ class Profile(models.Model):
     designation = models.CharField(max_length=100, blank=True, null=True)
     user_university = models.CharField(max_length=100, blank=True, null=True)
     user_description = models.TextField(blank=True, null=True)
-    user_profile_pic = models.ImageField(upload_to='upload',null=True,blank=True)
-    user_profile_cover = models.ImageField(upload_to='upload', null=True, blank=True)
+    user_profile_pic = models.ImageField(upload_to='upload', null=True, blank=True, default='../upload/Default_pic.png')
+    user_profile_cover = models.ImageField(upload_to='upload', null=True, blank=True, default='../upload/Default_cover.png')
+
 
     def __str__(self):
         return self.user.username

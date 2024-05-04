@@ -37,6 +37,7 @@
     input[type="text"],
     input[type="email"],
     input[type="number"],
+    input[type="password"],
     select,
     input[type="file"] {
         width: 100%;
@@ -110,10 +111,10 @@
             <input type="email" id="email" name="email" placeholder="Enter your email">
         </div>
         <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" placeholder="Enter your age">
+            <label for="university">University:</label>
+            <input type="text" id="university" name="university" placeholder="Enter your University">
         </div>
-        <div class="form-group">
+     <!--   <div class="form-group">
             <label for="gender">Gender:</label>
             <select id="gender" name="gender" class="gender-select">
                 <option value="">Choose...</option>
@@ -121,7 +122,25 @@
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
+        </div>  -->
+
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input type="text" id="designation" name="designation" placeholder="Enter your designation">
         </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" placeholder="Enter your description">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+        </div>
+
+
+
         <div class="btn-container">
             <button type="submit" class="btn btn-save-changes">Save Changes</button>
             <button type="button" class="btn btn-cancel">Cancel</button>

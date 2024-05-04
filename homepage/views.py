@@ -24,14 +24,14 @@ def signUp(request):
         uniname = request.POST.get('uniname')
         designation = request.POST.get('designation')
         description = request.POST.get('description')
-        
+
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
         profile = Profile.objects.create(user = user,user_mobile=phone,user_university =uniname,designation=designation,user_description = description)
-        profile.save() 
+        profile.save()
         return redirect('/')
-             
-    
+
+
     return render(request, template_name='signup.html')
 
 def loginUser(request):
@@ -47,13 +47,73 @@ def loginUser(request):
                 login(request, user)
                 return redirect('profile')
             else:
-                return redirect('/')  
+                return redirect('/')
         return render(request,'login.html')
-    
+
 def logOutUser(request):
     auth.logout(request)
     return redirect('/')
-    
+
+
+def updateProfile(request):
+
+
+    return render(request, template_name='Update profile.html')
+
+
+def profileUpdate(request):
+    formU = UserCForm()
+    formP = UserProfileForm()
+    user = User.objects.get(username = request.user.username)
+    print(user)
+
+    pro = Profile.objects.get( user = user)
+    print(pro)
+    formU = UserCForm(instance = user)
+    formP = UserProfileForm(instance = pro)
+    if request.method == 'POST':
+
+        # username = request.POST.get('username')
+        # phone = request.POST.get('phone')
+        # email = request.POST.get('email')
+        # password = request.POST.get('password')
+        # uniname = request.POST.get('uniname')
+        # designation = request.POST.get('designation')
+        # description = request.POST.get('description')
+        # picture = request.POST.get('profilePic')
+        # cover = request.POST.get('coverPic')
+
+
+        formU = UserCForm(request.POST, request.FILES, instance=user)
+        formP = UserProfileForm(request.POST, request.FILES, instance=pro)
+
+        # user.update(username=username, email=email, password=password)
+        # pro.update(user=user, user_mobile=phone, user_university=uniname, designation=designation,
+        #            user_description = description, user_profile_pic=picture, user_profile_cover=cover)
+        #
+        # user.save()
+        # pro.save()
+
+        if formP.is_valid():
+            formP.save()
+        if formU.is_valid():
+            formU.save()
+        # context = {
+        #     'title':'Successfull',
+        #     'm1': request.user.username,
+        #     'm2':'your profile Update Successfull',
+        #     'url':'profile',
+        #     }
+        return render(request, '../profile.html') #, context)
+
+    context = {
+        'formP':formP,
+        'formU':formU
+    }
+
+    return render(request, '../Update profile.html', context)
+
+
 # feed removed
 # def feed(request):
     # return render(request, template_name='feed.html')
@@ -95,9 +155,6 @@ def orderAndPayments(request):
 def settings(request):
     return render(request, template_name='settings.html')
 
-
-def updateProfile(request):
-    return render(request, template_name='Update profile.html')
 
 
 def uploadProject(request):
