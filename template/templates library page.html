@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +42,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Aligns items evenly along the main axis */
   }
   .template-details {
     margin-left: 20px;
@@ -58,6 +60,8 @@
   .action-buttons {
     text-align: center;
     margin-top: auto;
+    display: flex;
+    align-items: center; /* Aligns items vertically */
   }
   .action-buttons a {
     background-color: #333;
@@ -75,10 +79,31 @@
     height: 100px;
     border-radius: 10px;
   }
+  .filter-dropdown {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  .filter-dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+  }
 </style>
 </head>
 <body>
 <div class="header">Templates Library <i class="fas fa-file icon"></i></div>
+
+<div class="filter-dropdown">
+  <label for="sort-by">Sort by:</label>
+  <select id="sort-by" onchange="sortTemplates()">
+    <option value="price-high-to-low">Price: High to Low</option>
+    <option value="price-low-to-high">Price: Low to High</option>
+    <option value="relevance">Relevance</option>
+    <option value="popularity">Popularity</option>
+  </select>
+</div>
 
 <div class="templates-container" id="templates-container">
   <!-- Templates will be dynamically added here -->
@@ -86,7 +111,7 @@
 
 <script>
   // Function to add a new template
-  function addTemplate(title, description, imageUrl) {
+  function addTemplate(title, description, imageUrl, price) {
     var templatesContainer = document.getElementById("templates-container");
 
     // Create template box
@@ -115,35 +140,71 @@
     templateDescription.classList.add("template-description");
     templateDescription.textContent = description;
 
+    // Create template price
+    var templatePrice = document.createElement("div");
+    templatePrice.textContent = "Price: " + price;
+
     // Create action buttons
     var actionButtons = document.createElement("div");
     actionButtons.classList.add("action-buttons");
     var viewButton = document.createElement("a");
     viewButton.textContent = "View";
-    viewButton.href = "#";
+    viewButton.href = "#"; // You can set the href attribute to the desired page URL
     var getButton = document.createElement("a");
     getButton.textContent = "Get";
-    getButton.href = "#";
+    getButton.href = "#"; // You can set the href attribute to the desired page URL
     actionButtons.appendChild(viewButton);
     actionButtons.appendChild(getButton);
 
     // Append elements to template details
     templateDetails.appendChild(templateTitle);
     templateDetails.appendChild(templateDescription);
-    templateDetails.appendChild(actionButtons);
+    templateDetails.appendChild(templatePrice);
 
-    // Append vector design and template details to template box
+    // Append elements to template box
     templateBox.appendChild(vectorDesign);
     templateBox.appendChild(templateDetails);
+    templateBox.appendChild(actionButtons);
 
     // Append template box to templates container
     templatesContainer.appendChild(templateBox);
   }
 
   // Add initial templates
-  addTemplate("Complaint Letter", "A template for writing a formal complaint letter.", "demo_pic_1.jpg");
-  addTemplate("ERD for Shopping System", "An Entity-Relationship Diagram for designing a shopping system database.", "demo_pic_2.jpg");
-  addTemplate("Theory of Computation Project", "A project exploring various concepts in the theory of computation.", "demo_pic_3.jpg");
+  addTemplate("Complaint Letter", "A template for writing a formal complaint letter.", "demo_pic_1.jpg", "$9.99");
+  addTemplate("ERD for Shopping System", "An Entity-Relationship Diagram for designing a shopping system database.", "demo_pic_2.jpg", "$14.99");
+  addTemplate("Theory of Computation Project", "A project exploring various concepts in the theory of computation.", "demo_pic_3.jpg", "$19.99");
+
+  // Function to sort templates
+  function sortTemplates() {
+    var selectElement = document.getElementById("sort-by");
+    var sortBy = selectElement.value;
+    var templatesContainer = document.getElementById("templates-container");
+    var templateBoxes = Array.from(templatesContainer.children);
+
+    switch (sortBy) {
+      case "price-high-to-low":
+        templateBoxes.sort(function(a, b) {
+          var priceA = parseFloat(a.querySelector(".template-details div:nth-child(3)").textContent.replace("Price: $", ""));
+          var priceB = parseFloat(b.querySelector(".template-details div:nth-child(3)").textContent.replace("Price: $", ""));
+          return priceB - priceA;
+        });
+        break;
+      case "price-low-to-high":
+        templateBoxes.sort(function(a, b) {
+          var priceA = parseFloat(a.querySelector(".template-details div:nth-child(3)").textContent.replace("Price: $", ""));
+          var priceB = parseFloat(b.querySelector(".template-details div:nth-child(3)").textContent.replace("Price: $", ""));
+          return priceA - priceB;
+        });
+        break;
+      // Add cases for other sorting options if needed
+    }
+
+    // Re-append sorted template boxes
+    templateBoxes.forEach(function(templateBox) {
+      templatesContainer.appendChild(templateBox);
+    });
+  }
 </script>
 
 </body>
