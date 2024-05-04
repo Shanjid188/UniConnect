@@ -1,99 +1,13 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Templates Library</title>
+{% extends "base/base.html" %}
+
+{% load static %}
+{% block content %}
 <!-- Add Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White, Sky Blue gradient */
-    color: #333; /* Text color */
-  }
-  .header {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: black; /* Changed title color to solid black */
-  }
-  .icon {
-    margin-left: 10px;
-  }
-  .templates-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-  .template-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 80%; /* Adjusted width */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Aligns items evenly along the main axis */
-  }
-  .template-details {
-    margin-left: 20px;
-  }
-  .template-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: black; /* Changed title color to solid black */
-    margin-bottom: 10px;
-  }
-  .template-description {
-    color: #666;
-    margin-bottom: 10px;
-  }
-  .action-buttons {
-    text-align: center;
-    margin-top: auto;
-    display: flex;
-    align-items: center; /* Aligns items vertically */
-  }
-  .action-buttons a {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 0 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-  }
-  .vector-design img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-  }
-  .filter-dropdown {
-    text-align: right;
-    margin-bottom: 20px;
-  }
-  .filter-dropdown select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #333;
-  }
-</style>
-</head>
-<body>
-<div class="header">Templates Library <i class="fas fa-file icon"></i></div>
+
+<div class="template-body">
+
+<div class="headerTemplate">Templates Library <i class="fas fa-file icon"></i></div>
 
 <div class="filter-dropdown">
   <label for="sort-by">Sort by:</label>
@@ -207,5 +121,6 @@
   }
 </script>
 
-</body>
-</html>
+</div>
+
+{% endblock %}
