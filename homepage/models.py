@@ -28,9 +28,20 @@ class Profile(models.Model):
 class Project(models.Model):
     project_title = models.CharField(max_length=200)
     project_description = models.TextField(blank=True, null=True)
+    project_pic = models.ImageField(upload_to='upload', null=True, blank=True)
 
     def __str__(self):
         return self.project_title
+
+
+class Templates(models.Model):
+    templates_title = models.CharField(max_length=200)
+    templates_description = models.TextField(blank=True, null=True)
+    templates_pic = models.ImageField(upload_to='upload', null=True, blank=True)
+    templates_price = models.FloatField()
+
+    def __str__(self):
+        return self.templates_title
 
 
 class Achievement(models.Model):

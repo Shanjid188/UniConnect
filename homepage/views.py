@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import *
-from .models import Profile
+from .models import Profile, Templates
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
@@ -68,6 +68,11 @@ def profile(request):
 
 
 def templatesLib(request):
+    templates = Templates.objects.all()
+    context = {
+        'templates': templates,
+    }
+
     return render(request, template_name='templates library page.html')
 
 
