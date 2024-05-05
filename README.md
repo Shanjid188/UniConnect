@@ -64,11 +64,15 @@ Access the application at http://localhost:8000 in your web browser.
 Contributions are welcome! If you'd like to contribute to UniConnect, please follow these steps:
 
 ##Fork the repository on GitHub.
+
 Create a new branch with a descriptive name (git checkout -b feature-name).
 Make your changes and commit them (git commit -am 'Add new feature').
 Push the branch to your fork (git push origin feature-name).
 Create a pull request on the main repository.
+
+
 ##License
+
 [MIT](https://choosealicense.com/licenses/mit/) 
 +MIT License
 
