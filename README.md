@@ -3,10 +3,15 @@
 ##UniConnect is a platform aimed at connecting university students, allowing them to share ideas, collaborate on projects, and engage in meaningful discussions within their academic community.
 
 #Features
+
 *Idea Hub: A centralized hub where users can share their project ideas, browse ideas posted by others, and collaborate with like-minded individuals.
+
 *Project Collaboration: Users can form teams, collaborate on projects, and track the progress of their collaborative endeavors.
+
 *Discussion Forums: Discussion forums dedicated to various academic subjects, providing a platform for students to ask questions, share resources, and engage in discussions.
+
 *Profile Management: Users can manage their profiles, including updating personal information, managing project contributions, and viewing their activity history.
+
 
 ##Technologies Used
 
