@@ -9,11 +9,14 @@
 *Profile Management: Users can manage their profiles, including updating personal information, managing project contributions, and viewing their activity history.
 
 ##Technologies Used
+
 Backend: Django, Python
 Frontend: HTML, CS
 
 ##Version Control: Git, GitHub
+
 ##Installation
+
 ##Clone the repository:
 ```bash
 git clone https://github.com/Shanjid188/UniConnect.git
