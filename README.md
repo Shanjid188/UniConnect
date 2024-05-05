@@ -88,6 +88,7 @@ Create a pull request on the main repository.
 +SOFTWARE
 
 ##Acknowledgements
+
 This project was inspired by the need for a centralized platform for university students to collaborate and share ideas.
 Special thanks to the Django and Python communities for their excellent documentation and resources.
 
