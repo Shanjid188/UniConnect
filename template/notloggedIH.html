@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% block content %}
+
+<div class="bodyIdeas">
+
+<div class="title">Welcome to Ideas Hub</div>
+
+{% for idea in ideas %}
+<div class="idea-box">
+  <div class="card p-3 text-dark bg-light border border-light rounded-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title idea-title">{{ idea.title }}</h5>
+      <p class="card-text idea-description">{{ idea.description }}</p>
+    </div>
+  </div>
+  <img src="{{ idea.image }}" class="idea-image card-img-top" alt="{{ idea.title }}">
+</div>
+{% endfor %}
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</div>
+
+{% endblock %}

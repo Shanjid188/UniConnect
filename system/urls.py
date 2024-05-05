@@ -41,7 +41,7 @@ urlpatterns = [
 
     path('uploadProject/', a_views.uploadProject, name='uploadProject'),
     path('cartTemp/', a_views.cartTemp, name='cartTemp'),
-    path('likedProject/', a_views.likedProject, name='likedProject'),
+    path('save/', a_views.save, name='save'),
     path('messenger/', a_views.messenger, name='messenger'),
     path('searchPeople/', a_views.searchPeople, name='searchPeople'),
     path('someonesProfile/', a_views.someonesProfile, name='someonesProfile'),

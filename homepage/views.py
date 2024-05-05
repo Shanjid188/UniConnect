@@ -169,8 +169,8 @@ def cartTemp(request):
     return render(request, template_name='cartfortemplates.html')
 
 
-def likedProject(request):
-    return render(request, template_name='liked project.html')
+def save(request):
+    return render(request, template_name='save.html')
 
 
 def messenger(request):

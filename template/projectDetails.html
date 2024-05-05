@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+    .container {
+        width: 80%;
+        margin: 50px auto;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .project-title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .project-images {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .project-images img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .project-details {
+        margin-bottom: 20px;
+    }
+    .project-files {
+        margin-bottom: 20px;
+    }
+    .project-files a {
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s;
+    }
+    .project-files a:hover {
+        color: #666;
+    }
+    .btn-container {
+        text-align: center;
+    }
+    .btn-save,
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-right: 10px;
+    }
+    .btn-back {
+        background-color: #6c757d;
+    }
+    .btn-save:hover,
+    .btn-back:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="project-title">Project Title</h1>
+    <div class="project-images">
+        <img src="https://via.placeholder.com/400x300" alt="Project Image">
+        <img src="https://via.placeholder.com/400x300" alt="Project Image">
+        <img src="https://via.placeholder.com/400x300" alt="Project Image">
+        <img src="https://via.placeholder.com/400x300" alt="Project Image">
+    </div>
+    <div class="project-details">
+        <h2>Project Description</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis enim at arcu accumsan hendrerit sit amet at ipsum. Sed eget neque id nisi facilisis malesuada nec vel tortor.</p>
+    </div>
+    <div class="project-files">
+        <h2>Project Files</h2>
+        <a href="#">File 1</a>
+        <a href="#">File 2</a>
+        <a href="#">File 3</a>
+    </div>
+    <div class="btn-container">
+        <button class="btn btn-save">Save</button>
+        <a href="#" class="btn btn-back">Back</a>
+    </div>
+</div>
+
+</body>
+</html>
