@@ -1,8 +1,8 @@
 # UniConnect
 
-##UniConnect is a platform aimed at connecting university students, allowing them to share ideas, collaborate on projects, and engage in meaningful discussions within their academic community.
+## UniConnect is a platform aimed at connecting university students, allowing them to share ideas, collaborate on projects, and engage in meaningful discussions within their academic community.
 
-#Features
+## Features
 
 *Idea Hub: A centralized hub where users can share their project ideas, browse ideas posted by others, and collaborate with like-minded individuals.
 
@@ -13,25 +13,25 @@
 *Profile Management: Users can manage their profiles, including updating personal information, managing project contributions, and viewing their activity history.
 
 
-##Technologies Used
+## Technologies Used
 
 Backend: Django, Python
 Frontend: HTML, CS
 
-##Version Control: Git, GitHub
+## Version Control: Git, GitHub
 
-##Installation
+## Installation
 
 ##Clone the repository:
 ```bash
 git clone https://github.com/Shanjid188/UniConnect.git
 ````
-##Navigate to the project directory:
+## Navigate to the project directory:
 ```bash
 cd UniConnect
 ```
 
-##Set up a virtual environment:
+## Set up a virtual environment:
 ```bash
 python -m venv env
 ````
@@ -46,18 +46,18 @@ On macOS and Linux:
 source env/bin/activate
 ```
 
-##Install dependencies:
+## Install dependencies:
 ```bash
 pip install -r requirements.txt
 ````
 
 
-##Apply database migrations:
+## Apply database migrations:
 ```bash
 python manage.py migrate
 ```
 
-##Run the development server:
+## Run the development server:
 ```bash
 python manage.py runserver
 ```
@@ -65,10 +65,10 @@ python manage.py runserver
 Access the application at http://localhost:8000 in your web browser.
 
 
-##Contributing
+## Contributing
 Contributions are welcome! If you'd like to contribute to UniConnect, please follow these steps:
 
-##Fork the repository on GitHub.
+## Fork the repository on GitHub.
 
 Create a new branch with a descriptive name (git checkout -b feature-name).
 Make your changes and commit them (git commit -am 'Add new feature').
@@ -76,7 +76,7 @@ Push the branch to your fork (git push origin feature-name).
 Create a pull request on the main repository.
 
 
-##License
+## License
 
 [MIT](https://choosealicense.com/licenses/mit/) 
 +MIT License
@@ -101,7 +101,7 @@ Create a pull request on the main repository.
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 +SOFTWARE
 
-##Acknowledgements
+## Acknowledgements
 
 This project was inspired by the need for a centralized platform for university students to collaborate and share ideas.
 Special thanks to the Django and Python communities for their excellent documentation and resources.
