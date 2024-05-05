@@ -22,7 +22,9 @@ Frontend: HTML, CS
 git clone https://github.com/Shanjid188/UniConnect.git
 ````
 ##Navigate to the project directory:
+```bash
 cd UniConnect
+```
 
 ##Set up a virtual environment:
 ```bash
