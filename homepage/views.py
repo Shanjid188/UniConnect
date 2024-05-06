@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from .forms import *
 from .models import Profile, Templates
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import get_user_model
@@ -162,7 +162,17 @@ def settings(request):
 
 
 def uploadProject(request):
-    return render(request, template_name='uploadproject.html')
+    formUP = ProjectUploadForm()
+    if request.method == 'POST':
+        formUP = ProjectUploadForm(request.POST)
+        if formUP.is_valid():
+            formUP.save()
+            return redirect('profile')
+
+    context = {
+        'formUP': formUP,
+    }
+    return render(request, template_name='uploadproject.html', context=context)
 
 
 def cartTemp(request):
@@ -185,4 +195,21 @@ def someonesProfile(request):
     return render(request, template_name='someones profile.html')
 
 
+# def notLoggedIdeasHub(request):
+#     return render(request, template_name='notloggedIH.html')
 
+
+def notLoggedTemplatesLibrary(request):
+    return render(request, template_name='notloggedTL.html')
+
+
+def aboutUser(request):
+    return render(request, template_name='about.html')
+
+
+def notLoggedIdeasHub(request):
+    ideas = Project.objects.all()
+    idea = {
+        "ideas": ideas,
+    }
+    return render(request, 'notloggedIH.html', context=idea)

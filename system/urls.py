@@ -48,5 +48,9 @@ urlpatterns = [
 
     path('user_Delete/', a_views.delete_User, name='user_Delete'),
 
+    path('notLoggedIdeasHub/', a_views.notLoggedIdeasHub, name='notLoggedIdeasHub'),
+    path('notLoggedTemplatesLibrary/', a_views.notLoggedTemplatesLibrary, name='notLoggedTemplatesLibrary'),
+    path('aboutUser/', a_views.aboutUser, name='aboutUser'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

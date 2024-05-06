@@ -72,7 +72,11 @@
 
 <div class="upload-project-container">
     <h1>Upload Project</h1>
-    <form id="uploadProjectForm">
+    <form id="uploadProjectForm" method='POST' enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{formUP.as_p}}
+        {% comment %}
+
         <div class="form-group">
             <label for="projectFiles">Add Files:</label>
             <input type="file" id="projectFiles" name="projectFiles" multiple>
@@ -108,7 +112,8 @@
         </div>
         <div class="btn-back-container">
             <button type="button" class="btn btn-back" onclick="window.history.back();">Back/Cancel</button>
-        </div>
+        </div>  {% endcomment %}
+        <input type="submit" name="submit" value="submit">
     </form>
 </div>
 

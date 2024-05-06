@@ -11,11 +11,11 @@
 <div class="idea-box">
   <div class="card p-3 text-dark bg-light border border-light rounded-3" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title idea-title">{{ idea.title }}</h5>
-      <p class="card-text idea-description">{{ idea.description }}</p>
+      <h5 class="card-title idea-title">{{ idea.project_title }}</h5>
+      <p class="card-text idea-description">{{ idea.project_description }}</p>
     </div>
   </div>
-  <img src="{{ idea.image }}" class="idea-image card-img-top" alt="{{ idea.title }}">
+  <img src="{{ idea.project_pic }}" class="idea-image card-img-top" alt="{{ idea.title }}">
 </div>
 {% endfor %}
 
