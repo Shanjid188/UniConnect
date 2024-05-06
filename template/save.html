@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Liked Projects</title>
+  {% load static %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
   body {
@@ -88,12 +89,12 @@
 <body>
 
 <div class="liked-header">
-  <h1>Liked Projects</h1>
+  <h1>Saved Projects</h1>
 </div>
 
 <div class="project-listings">
   <div class="project-box">
-    <img class="demo-pic" src="{%  static 'image/1. eco for profile html.jpeg' %}" alt="Demo Pic">
+    <img class="demo-pic" src="{% static 'image/1ecoForProfilehtml.jpeg'%}" alt="Demo Pic">
     <div class="project-title">Eco Track</div>
     <div class="project-description">Through features like carbon footprint calculation, waste reduction tips, and eco-friendly product suggestions, users can easily adopt more sustainable habits.</div>
     <div class="button-container">

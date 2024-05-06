@@ -164,7 +164,7 @@ def settings(request):
 def uploadProject(request):
     formUP = ProjectUploadForm()
     if request.method == 'POST':
-        formUP = ProjectUploadForm(request.POST)
+        formUP = ProjectUploadForm(request.POST, request.FILES)
         if formUP.is_valid():
             formUP.save()
             return redirect('profile')
@@ -213,3 +213,11 @@ def notLoggedIdeasHub(request):
         "ideas": ideas,
     }
     return render(request, 'notloggedIH.html', context=idea)
+
+
+def LoggedIdeasHub(request):
+    ideasL = Project.objects.all()
+    ideaL = {
+        "ideasL": ideasL,
+    }
+    return render(request, 'ideas hub.html', context=ideaL)

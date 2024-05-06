@@ -62,6 +62,25 @@
   <img src="{%  static 'image/6. data for profile html.png' %} " class="idea-image card-img">
 </div>
 
+
+ {% for ideaL in ideasL %}
+<div class="idea-box">
+  <div class="card p-3 text-dark bg-light border border-light rounded-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title idea-title">{{ ideaL.project_title }}</h5>
+      <p class="card-text idea-description">{{ ideaL.project_description }}</p>
+    </div>
+  </div>
+
+  {% if ideaL.project_pic %}
+
+      <img src="{{ ideaL.project_pic.url }}" class="idea-image card-img-top" alt="{{ ideaL.title }}">
+
+  {% endif %}
+
+</div>
+{% endfor %}
+
 <!-- Bootstrap JS (Optional) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 

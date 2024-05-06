@@ -13,9 +13,26 @@
     <div class="card-body">
       <h5 class="card-title idea-title">{{ idea.project_title }}</h5>
       <p class="card-text idea-description">{{ idea.project_description }}</p>
+
+
     </div>
+
+    {% if user.is_authenticated %}
+    <div class="card-body action-buttons">
+      <a href="#" class="card-link">Open</a>
+      <a href="#" class="card-link">Save</a>
+    </div>
+    {% endif %}
   </div>
-  <img src="{{ idea.project_pic }}" class="idea-image card-img-top" alt="{{ idea.title }}">
+
+
+
+  {% if idea.project_pic %}
+
+      <img src="{{ idea.project_pic.url }}" class="idea-image card-img-top" alt="{{ idea.title }}">
+
+  {% endif %}
+
 </div>
 {% endfor %}
 
