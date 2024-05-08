@@ -11,15 +11,17 @@
 <div class="idea-box">
   <div class="card p-3 text-dark bg-light border border-light rounded-3" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title idea-title">{{ idea.title }}</h5>
-      <p class="card-text idea-description">{{ idea.description }}</p>
+      <h5 class="card-title idea-title">{{ idea.project_title }}</h5>
+      <p class="card-text idea-description">{{ idea.project_description }}</p>
+
+      {% if idea.project_pic %}  <img src="{{ idea.project_pic.url }}" class="idea-image card-img-top" alt="{{ idea.title }}">
+      {% else %}
+        <img src="{% static 'no_image.png' %}" class="idea-image card-img-top" alt="No image available">  {% endif %}
     </div>
   </div>
-  <img src="{{ idea.image }}" class="idea-image card-img-top" alt="{{ idea.title }}">
 </div>
 {% endfor %}
 
-<!-- Bootstrap JS (Optional) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </div>
