@@ -131,15 +131,6 @@ def profile(request):
     return render(request, template_name='profile.html')
 
 
-def templatesLib(request):
-    templates = Templates.objects.all()
-    context = {
-        'templates': templates,
-    }
-
-    return render(request, template_name='templates library page.html')
-
-
 def AccStatus(request):
     return render(request, template_name='account status.html')
 
@@ -174,6 +165,19 @@ def uploadProject(request):
     }
     return render(request, template_name='uploadproject.html', context=context)
 
+
+def uploadTemplate(request):
+    formUT = TemplateUploadForm()
+    if request.method == 'POST':
+        formUT = TemplateUploadForm(request.POST, request.FILES)
+        if formUT.is_valid():
+            formUT.save()
+            return redirect('profile')
+
+    context = {
+        'formUT': formUT,
+    }
+    return render(request, template_name='uploadtemplate.html', context=context)
 
 def cartTemp(request):
     return render(request, template_name='cartfortemplates.html')
@@ -221,3 +225,13 @@ def LoggedIdeasHub(request):
         "ideasL": ideasL,
     }
     return render(request, 'ideas hub.html', context=ideaL)
+
+
+def templatesLib(request):
+    templatesTL = Templates.objects.all()
+    templatesTL = {
+        'templatesTL': templatesTL,
+    }
+
+    return render(request, template_name='templatesLibrary.html', context=templatesTL)
+

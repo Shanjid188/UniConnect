@@ -52,5 +52,7 @@ urlpatterns = [
     path('notLoggedTemplatesLibrary/', a_views.notLoggedTemplatesLibrary, name='notLoggedTemplatesLibrary'),
     path('aboutUser/', a_views.aboutUser, name='aboutUser'),
 
+    path('uploadTemplate/', a_views.uploadTemplate, name='uploadTemplate'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

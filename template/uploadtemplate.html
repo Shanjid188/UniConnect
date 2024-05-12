@@ -48,7 +48,13 @@
 <div class="container">
   <h1>Upload Templates</h1>
   
-  <form id="templateForm">
+  <form id="templateForm" method='POST' enctype="multipart/form-data" action="">
+
+        {% csrf_token %}
+        {{formUT.as_p}}
+
+        {% comment %}
+
     <div class="form-group">
       <label for="templateName">Template Name</label>
       <input type="text" class="form-control" id="templateName" placeholder="Enter template name">
@@ -59,14 +65,19 @@
     </div>
     <div class="form-group">
       <label for="templatePricing">Template Pricing</label>
-      <input type="text" class="form-control" id="templatePricing" placeholder="Enter template pricing">
+      <input type="number" class="form-control" id="templatePricing" placeholder="Enter template pricing">
       <div class="invalid-feedback" id="pricingFeedback"></div>
     </div>
     <div class="form-group">
       <label for="templateImages">Template Images (Max 3)</label>
       <input type="file" class="form-control-file" id="templateImages" accept="image/*" multiple>
     </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
+    {% endcomment %}
+
+    <input type="submit" name="submit" value="submit">
+
   </form>
   
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -86,6 +97,7 @@
   </div>
 </div>
 
+<!--
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -136,6 +148,8 @@
     });
   });
 </script>
+
+  -->
 
 </body>
 </html>

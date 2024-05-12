@@ -19,3 +19,9 @@ class ProjectUploadForm(ModelForm):
     class Meta:
         model = Project
         fields = '__all__'
+
+
+class TemplateUploadForm(ModelForm):
+    class Meta:
+        model = Templates
+        fields = '__all__'
