@@ -120,6 +120,7 @@
 </style>
 </head>
 <body>
+{% load static %}
 
 <div class="search-people-container">
     <h1>Search People<span class="search-icon">&#128269;</span></h1>
@@ -127,20 +128,39 @@
         <input type="text" class="search-bar" placeholder="Enter Person ID...">
         <button class="go-button" onclick="goToProfile()">Go</button>
     </div>
+
+
     <div class="people-list">
         <div class="person">
-            <img src="person1.jpg" alt="Person 1">
+            <img src="{%  static 'image/profile_pics/Redwan.png' %}" alt="Person 1">
             <div class="person-name">Redwan</div>
-            <div class="person-id">ID: 21201195</div>
+            <div class="person-id">3rd year 1st semester student</div>
+            <div class="person-id">UAP</div>
             <button class="visit-profile-btn">Visit Profile</button>
         </div>
         <div class="person">
-            <img src="person2.jpg" alt="Person 2">
+            <img src="{%  static 'image/profile_pics/Shanjid.png' %}" alt="Person 2">
             <div class="person-name">Shanjid</div>
-            <div class="person-id">ID: 21201188</div>
+            <div class="person-id">3rd year 1st semester student</div>
+            <div class="person-id">UAP</div>
             <button class="visit-profile-btn">Visit Profile</button>
         </div>
         <!-- Add more people as needed -->
+
+        {% for human in srchPpl %}
+        <div class="person">
+            {% if human.user_profile_pic %}
+            <img src="{{ human.user_profile_pic.url }}" alt="Person 1">
+            {% endif %}
+
+            <div class="person-name">{{ human.username }}</div>
+            <div class="person-id">{{ human.designation }}</div>
+            <div class="person-id">{{human.user_university}}</div>
+            <button class="visit-profile-btn">Visit Profile</button>
+        </div>
+        {% endfor %}
+
+
     </div>
     <div class="btn-back-container">
         <button class="btn-back" onclick="window.history.back();">Back</button>

@@ -84,3 +84,21 @@
         color: white;
         text-decoration: none;
     }
+
+    .search-people {
+        background-color: #87CEEB;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+
+    }
+
+    .search-people:hover {
+    background-color: #4682b4;
+    }

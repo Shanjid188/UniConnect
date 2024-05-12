@@ -191,10 +191,6 @@ def messenger(request):
     return render(request, template_name='messenger.html')
 
 
-def searchPeople(request):
-    return render(request, template_name='searchpeople.html')
-
-
 def someonesProfile(request):
     return render(request, template_name='someones profile.html')
 
@@ -235,3 +231,14 @@ def templatesLib(request):
 
     return render(request, template_name='templatesLibrary.html', context=templatesTL)
 
+
+def searchPeople(request):
+    searchUsers = User.objects.all()
+    searchProfiles = Profile.objects.all()
+
+    srchPpl = {
+        'searchUsers': searchUsers,
+        'searchProfiles': searchProfiles,
+    }
+
+    return render(request, template_name='searchpeople.html', context=srchPpl)
