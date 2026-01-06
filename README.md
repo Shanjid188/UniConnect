@@ -1,28 +1,82 @@
-# UniConnect
+# 🌐 UniConnect
 
-## UniConnect is a platform aimed at connecting university students, allowing them to share ideas, collaborate on projects, and engage in meaningful discussions within their academic community.
-<img width="1872" height="865" alt="image" src="https://github.com/user-attachments/assets/f487fde5-8e89-47e4-91df-ae2d831af66c" />
+**UniConnect** is a collaborative platform designed to connect **university students**, enabling them to **share ideas, collaborate on projects, and participate in meaningful academic discussions** within their community.
 
-## Features
+<p align="center">
+  <img width="100%" alt="UniConnect Home" src="https://github.com/user-attachments/assets/f487fde5-8e89-47e4-91df-ae2d831af66c" />
+</p>
 
-*Idea Hub: A centralized hub where users can share their project ideas, browse ideas posted by others, and collaborate with like-minded individuals.
-<img width="1877" height="849" alt="image" src="https://github.com/user-attachments/assets/84f29a23-8075-4cf0-b87b-a3d29a8180ee" />
-*Project Collaboration: Users can form teams, collaborate on projects, and track the progress of their collaborative endeavors.
+---
 
-*Discussion Forums: Discussion forums dedicated to various academic subjects, providing a platform for students to ask questions, share resources, and engage in discussions.
+## 🚀 Key Features
 
-*Profile Management: Users can manage their profiles, including updating personal information, managing project contributions, and viewing their activity history.
+### 💡 Idea Hub
+A centralized space where students can:
+- Share innovative project ideas  
+- Browse ideas posted by others  
+- Collaborate with like-minded peers  
 
-<img width="1880" height="863" alt="image" src="https://github.com/user-attachments/assets/558d1f60-7832-44dd-bf70-0c5333b37a26" />
+<p align="center">
+  <img width="100%" alt="Idea Hub" src="https://github.com/user-attachments/assets/84f29a23-8075-4cf0-b87b-a3d29a8180ee" />
+</p>
 
+---
 
-## Technologies Used
+### 🤝 Project Collaboration
+- Form teams for academic or personal projects  
+- Collaborate efficiently within groups  
+- Track progress and contributions  
 
-Backend: Django, Python
-Frontend: HTML, CS
+---
 
-## Version Control: Git, GitHub
+### 💬 Discussion Forums
+- Subject-wise discussion boards  
+- Ask questions, share resources, and exchange knowledge  
+- Encourage peer-to-peer learning  
 
+---
+
+### 👤 Profile Management
+- Update personal information  
+- Track project contributions  
+- View activity history  
+
+<p align="center">
+  <img width="100%" alt="User Profile" src="https://github.com/user-attachments/assets/558d1f60-7832-44dd-bf70-0c5333b37a26" />
+</p>
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Python**
+- **Django**
+
+### Frontend
+- **HTML**
+- **CSS**
+
+### Database
+- **SQLite**
+
+### Version Control
+- **Git**
+- **GitHub**
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/Shanjid188/UniConnect.git
+```
+### 2️⃣ Navigate to the project directory
+```bash
+cd UniConnect
+
+```
 ## Installation
 
 ##Clone the repository:
