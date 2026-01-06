@@ -6,13 +6,13 @@
 ## Features
 
 *Idea Hub: A centralized hub where users can share their project ideas, browse ideas posted by others, and collaborate with like-minded individuals.
-
+<img width="1877" height="849" alt="image" src="https://github.com/user-attachments/assets/84f29a23-8075-4cf0-b87b-a3d29a8180ee" />
 *Project Collaboration: Users can form teams, collaborate on projects, and track the progress of their collaborative endeavors.
 
 *Discussion Forums: Discussion forums dedicated to various academic subjects, providing a platform for students to ask questions, share resources, and engage in discussions.
 
 *Profile Management: Users can manage their profiles, including updating personal information, managing project contributions, and viewing their activity history.
-<img width="1877" height="849" alt="image" src="https://github.com/user-attachments/assets/84f29a23-8075-4cf0-b87b-a3d29a8180ee" />
+
 <img width="1880" height="863" alt="image" src="https://github.com/user-attachments/assets/558d1f60-7832-44dd-bf70-0c5333b37a26" />
 
 
