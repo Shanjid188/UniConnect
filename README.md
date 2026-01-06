@@ -1,6 +1,7 @@
 # UniConnect
 
 ## UniConnect is a platform aimed at connecting university students, allowing them to share ideas, collaborate on projects, and engage in meaningful discussions within their academic community.
+<img width="1872" height="865" alt="image" src="https://github.com/user-attachments/assets/f487fde5-8e89-47e4-91df-ae2d831af66c" />
 
 ## Features
 
@@ -11,6 +12,8 @@
 *Discussion Forums: Discussion forums dedicated to various academic subjects, providing a platform for students to ask questions, share resources, and engage in discussions.
 
 *Profile Management: Users can manage their profiles, including updating personal information, managing project contributions, and viewing their activity history.
+<img width="1877" height="849" alt="image" src="https://github.com/user-attachments/assets/84f29a23-8075-4cf0-b87b-a3d29a8180ee" />
+<img width="1880" height="863" alt="image" src="https://github.com/user-attachments/assets/558d1f60-7832-44dd-bf70-0c5333b37a26" />
 
 
 ## Technologies Used
